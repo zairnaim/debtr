@@ -13,7 +13,8 @@ class MyApp extends StatelessWidget {
         primaryColor: Color(0xff212121),
         primarySwatch: Colors.purple,
       ),
-      home: LoginPage(title: 'Debtr'),
+      // home: LoginPage(title: 'Debtr'),
+      home: MainPage(),
     );
   }
 }
@@ -77,11 +78,85 @@ class LoginPageState extends State<LoginPage> {
             padding: const EdgeInsets.only(top: 100.0),
             child: RaisedButton(
               color: Colors.white,
-              child: Text("Google Sign in", style: TextStyle(color: myColors.accentColor),),
-              onPressed: (){},
+              child: Text(
+                "Google Sign in",
+                style: TextStyle(color: myColors.accentColor),
+              ),
+              onPressed: () {},
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+class MainPage extends StatefulWidget {
+  @override
+  _MainPageState createState() => _MainPageState();
+}
+
+class _MainPageState extends State<MainPage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Debtr", style: TextStyle(fontWeight: FontWeight.bold),),
+      ),
+      body: Material(
+        color: Colors.white,
+        child: new Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            Text(
+              "Welcome to Debtr",
+              style: mytextStyles.heading2d,
+              textAlign: TextAlign.center,
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Text(
+                    "Get Started",
+                    style: mytextStyles.heading4d,
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: ButtonTheme(
+                    minWidth: 250,
+                    height: 50,
+                    child: RaisedButton(
+                      child: Text(
+                        "Add Friend",
+                        textScaleFactor: 1.5,
+                      ),
+                      onPressed: () {},
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: ButtonTheme(
+                    minWidth: 250,
+                    height: 50,
+                    child: RaisedButton(
+                      child: Text(
+                        "New Debt",
+                        textScaleFactor: 1.5,
+                      ),
+                      onPressed: () {},
+                    ),
+                  ),
+                )
+              ],
+            )
+          ],
+        ),
       ),
     );
   }
@@ -96,6 +171,14 @@ class mytextStyles {
       TextStyle(color: Colors.white, fontFamily: 'PT Sans', fontSize: 36);
   static TextStyle heading4 =
       TextStyle(color: Colors.white, fontFamily: 'PT Sans', fontSize: 24);
+  static TextStyle heading1d =
+      TextStyle(color: Colors.black, fontFamily: 'PT Sans', fontSize: 64);
+  static TextStyle heading2d =
+      TextStyle(color: Colors.black, fontFamily: 'PT Sans', fontSize: 48);
+  static TextStyle heading3d =
+      TextStyle(color: Colors.black, fontFamily: 'PT Sans', fontSize: 36);
+  static TextStyle heading4d =
+      TextStyle(color: Colors.black, fontFamily: 'PT Sans', fontSize: 24);
 
   static TextStyle subtitle1 =
       TextStyle(color: Colors.white, fontFamily: 'PT Sans', fontSize: 64);
@@ -107,7 +190,7 @@ class mytextStyles {
       TextStyle(color: Colors.white, fontFamily: 'PT Sans', fontSize: 24);
 }
 
-class myColors{
+class myColors {
   static Color accentColor = Color(0xff8E24AA);
 }
 

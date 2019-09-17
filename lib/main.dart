@@ -101,7 +101,10 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Debtr", style: TextStyle(fontWeight: FontWeight.bold),),
+        title: Text(
+          "Debtr",
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
       ),
       body: Material(
         color: Colors.white,
@@ -154,6 +157,39 @@ class _MainPageState extends State<MainPage> {
                   ),
                 )
               ],
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class NewDebtPage extends StatefulWidget {
+  @override
+  _NewDebtPageState createState() => _NewDebtPageState();
+}
+
+class _NewDebtPageState extends State<NewDebtPage> {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Scaffold(
+      body: Material(
+        color: Colors.white,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            TextFormField(
+              decoration: InputDecoration(
+                labelText: "Debt Name",
+                labelStyle: mytextStyles.heading4d,
+                fillColor: Colors.blueGrey,
+                border: new OutlineInputBorder(
+                  borderRadius: new BorderRadius.circular(25.0),
+                  borderSide: new BorderSide(),
+                ),
+              ),
             )
           ],
         ),
